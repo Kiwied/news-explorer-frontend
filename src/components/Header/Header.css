@@ -1,0 +1,62 @@
+.header {
+  max-width: 1232px;
+  width: 85.5%;
+  margin: 0 auto;
+  padding: 19px 0 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.header__logo {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+}
+
+.header__link {
+  color: white;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin-right: 32px;
+}
+
+.header__auth-btn {
+  height: 48px;
+  padding: 0 15px 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid white;
+  box-sizing: border-box;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.header__auth-text {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.header__auth-img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
