@@ -2,12 +2,15 @@ import React from 'react';
 
 import './SearchForm.css';
 
-export default function SearchForm(props) {
+export default function SearchForm() {
   return (
     <section className="search">
-      <h1 className="search__title">Что творится в мире?</h1>
-      <p className="search__description">Находите самые свежие статьи на любую тему
-        и сохраняйте в своём личном кабинете.</p>
+      <div>
+        <h1 className="search__title">Что творится в мире?</h1>
+        <p className="search__description">Находите самые свежие статьи на любую тему
+          и сохраняйте в своём личном кабинете.</p>
+      </div>
+
       <form className="search__form">
         <input type="text"
                placeholder="Введите тему новости"

@@ -1,0 +1,136 @@
+.header__nav-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header__link {
+  color: #B6BCBF;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 80px;
+  margin-right: 32px;
+  height: 80px;
+  display: flex;
+}
+
+.header__link_color_black {
+  color: black;
+}
+
+.header__link_active {
+  color: white;
+  border-bottom: white 3px solid;
+  box-sizing: border-box;
+}
+
+.header__link_active_color_black {
+  color: black;
+  border-bottom: black 3px solid;
+}
+
+.header__auth-btn {
+  height: 48px;
+  padding: 0 15px 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid white;
+  box-sizing: border-box;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.header__auth-btn_color_black {
+  color: black;
+  border: 1px solid black;
+}
+
+.header__auth-btn:focus {
+  outline: none;
+}
+
+.header__auth-img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .header__link {
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 16px;
+  }
+
+  .header__auth-btn {
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__nav-container {
+    display: none;
+  }
+
+  .header__nav-container_mobile {
+    height: 230px;
+    width: calc(100vw - 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: absolute;
+    top: 56px;
+    left: -5.5%;
+    background-color: #1A1B22;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  .header__link {
+    color: white;
+    font-size: 18px;
+    line-height: 56px;
+  }
+
+  .header__link:first-of-type {
+    margin-top: 17px;
+  }
+
+  .header__link_color_black {
+    color: white;
+  }
+
+  .header__link_active {
+    border-bottom: none;
+  }
+
+  .header__link_active_color_black {
+    color: white;
+    border-bottom: none;
+  }
+
+  .header__auth-btn {
+    height: 56px;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  .header__auth-btn_color_black {
+    color: white;
+    border: white 1px solid;
+  }
+}
