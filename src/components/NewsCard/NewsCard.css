@@ -1,0 +1,239 @@
+.card {
+  width: 400px;
+  height: 576px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__container {
+  padding: 0 24px 0;
+  height: 304px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__date {
+  margin: 20px 0 12px;
+  color: #B6BCBF;
+  font-family: Source Sans Pro, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.card__title {
+  margin: 0 0 16px;
+  font-family: Roboto Slab, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card__description {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.card__source {
+  margin: auto 0 24px;
+  width: fit-content;
+  font-family: Roboto Slab, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: #B6BCBF;
+  text-decoration: none;
+  transition: color .1s linear;
+}
+
+.card__source:hover {
+  color: black;
+}
+
+.card__fav-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  background-image: url("../../images/fav-btn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-image .1s linear;
+}
+
+.card__fav-btn:focus {
+  outline: none;
+}
+
+.card__fav-btn:hover {
+  background-image: url("../../images/fav-btn-hover.svg");
+}
+
+.card__fav-btn_clicked {
+  background-image: url("../../images/fav-btn-clicked.svg");
+}
+
+.card__fav-btn_clicked:hover {
+  background-image: url("../../images/fav-btn-clicked.svg");
+}
+
+.card__fav-btn_delete {
+  background-image: url("../../images/trash-icon.svg");
+}
+
+.card__fav-btn_delete:hover {
+  background-image: url("../../images/trash-icon-hover.svg");
+}
+
+.card__caution {
+  background: white;
+  box-shadow: 0 10px 22px rgba(59, 74, 116, 0.1);
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  visibility: hidden;
+  transition: .1s linear;
+  opacity: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 14px 8px;
+}
+
+.card__fav-btn:hover + .card__caution {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .1s linear;
+}
+
+.card__keyword {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: white;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 224px;
+    height: 420px;
+  }
+
+  .card__container {
+    height: 270px;
+    padding: 0 16px 0;
+  }
+
+  .card__image {
+    width: 224px;
+    height: 150px;
+  }
+
+  .card__fav-btn {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card__date {
+    margin: 16px 0 12px;
+  }
+
+  .card__title {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+
+  .card__description {
+    -webkit-line-clamp: 4;
+  }
+
+  .card__source {
+    margin-bottom: 16px;
+  }
+
+  .card__caution {
+    top: 8px;
+    right: 53px;
+    max-width: 84px;
+  }
+
+  .card__keyword {
+    top: 8px;
+    left: 8px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+
+  .card__container {
+    height: 244px;
+  }
+
+  .card__image {
+    width: 288px;
+    height: 196px;
+  }
+
+  .card__fav-btn {
+    top: 16px;
+    right: 16px;
+  }
+
+  .card__date {
+    margin: 16px 0 10px;
+  }
+
+  .card__title {
+    line-height: 26px;
+    -webkit-line-clamp: 3;
+  }
+
+  .card__description {
+    -webkit-line-clamp: 3;
+  }
+
+  .card__caution {
+    top: 16px;
+    right: 70px;
+    max-width: 64px;
+  }
+
+  .card__keyword {
+    top: 16px;
+    left: 16px;
+  }
+}
