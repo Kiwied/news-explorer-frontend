@@ -21,10 +21,11 @@ export default function NewsCardList(props) {
           />
         ))}
       </ul>
-      <button type="button"
-              className="card-list__more-btn"
-              onClick={handleGridExpansion}
-      >Показать еще</button>
+      {props.articles.length >= cardsNumber &&
+        <button type="button"
+                 className="card-list__more-btn"
+                 onClick={handleGridExpansion}
+        >Показать еще</button>}
     </section>
   )
 }
