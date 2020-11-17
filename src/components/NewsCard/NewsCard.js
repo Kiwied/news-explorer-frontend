@@ -9,21 +9,26 @@ export default function NewsCard(props) {
     setIsFavourite(!isFavourite);
   }
 
+  function dateConverting(date) {
+    const publishDate = new Date(date);
+    return `${publishDate.toLocaleString("ru-RU", { month: 'long', day: 'numeric' })}, ${publishDate.getFullYear()}`;
+  }
+
   return (
     <li className="card">
-      <img src={props.card.image}
+      <img src={props.card.urlToImage}
            alt={`Изображение ${props.card.title}`}
            className="card__image"
       />
       <div className="card__container">
-        <p className="card__date">{props.card.date}</p>
+        <p className="card__date">{dateConverting(props.card.publishedAt)}</p>
         <h3 className="card__title">{props.card.title}</h3>
-        <p className="card__description">{props.card.text}</p>
+        <p className="card__description">{props.card.description}</p>
         <a className="card__source"
-           href={props.card.link}
+           href={props.card.url}
            target="_blank"
            rel="noreferrer"
-        >{props.card.source}</a>
+        >{props.card.source.name}</a>
       </div>
       <button type="button"
               className={`card__fav-btn${

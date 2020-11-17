@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './NewsCardList.css';
-import cards from '../../utils/cards';
 import NewsCard from '../NewsCard/NewsCard';
 
 export default function NewsCardList(props) {
@@ -14,9 +13,9 @@ export default function NewsCardList(props) {
   return (
     <section className="card-list-container">
       <ul className="card-list">
-        {cards.slice(0, cardsNumber).map((currentCard, i) => (
+        {props.articles.slice(0, cardsNumber).map(currentCard => (
           <NewsCard
-            key={i}
+            key={currentCard.id}
             card={currentCard}
             loggedIn={props.loggedIn}
           />
