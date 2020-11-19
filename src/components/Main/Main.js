@@ -8,6 +8,13 @@ import Preloader from "../Preloader/Preloader";
 import NoNewsFound from "../NoNewsFound/NoNewsFound";
 
 export default function Main(props) {
+  React.useEffect(() => {
+    const previousSearch = JSON.parse(localStorage.getItem('articles'));
+    if (previousSearch) {
+      props.setArticles(previousSearch);
+    }
+  }, [])
+
   return (
     <main className="main">
       <SearchForm getNews={props.getNews}/>
@@ -16,7 +23,12 @@ export default function Main(props) {
         {props.articles.length !== 0 &&
           <>
             <h2 className="main__title">Результаты поиска</h2>
-            <NewsCardList loggedIn={props.loggedIn} articles={props.articles}/>
+            <NewsCardList loggedIn={props.loggedIn}
+                          articles={props.articles}
+                          setArticles={props.setArticles}
+                          savedArticles={props.savedArticles}
+                          setSavedArticles={props.setSavedArticles}
+            />
           </>}
         {props.isLoading && <Preloader/>}
         {props.noResults && <NoNewsFound/>}

@@ -15,9 +15,11 @@ export default function NewsCardList(props) {
       <ul className="card-list">
         {props.articles.slice(0, cardsNumber).map(currentCard => (
           <NewsCard
-            key={currentCard.id}
+            key={currentCard.id + 1}
             card={currentCard}
             loggedIn={props.loggedIn}
+            savedArticles={props.savedArticles}
+            setSavedArticles={props.setSavedArticles}
           />
         ))}
       </ul>

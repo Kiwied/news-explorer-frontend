@@ -3,13 +3,34 @@ import React from 'react';
 import './RegisterPopup.css';
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import useFormWithValidation from "../FormValidation/FormValidation";
+import {mainApi} from "../../utils/MainApi";
 
 export default function RegisterPopup(props) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [name, setName] = React.useState('');
-
   const validator = useFormWithValidation();
+
+  function handleRegister(email, pass, name) {
+    mainApi.register(email, pass, name)
+      .then(() => {
+        setEmail('');
+        setPassword('');
+        setName('');
+        props.onClose(false);
+        props.setSuccessPopupOpen(true);
+      })
+      .catch(err => {
+        console.log(err);
+        if (err === 'Ошибка: 409 Conflict') {
+          props.setServerErrMessage('Пользователь с этим email уже зарегистрирован')
+        } else if (err === 'Ошибка: 400 Bad Request') {
+          props.setServerErrMessage('Введены некорректные данные')
+        } else {
+          props.setServerErrMessage('Ошибка сервера')
+        }
+      })
+  }
 
   function handleEmailChange(evt) {
     setEmail(evt.target.value);
@@ -31,8 +52,13 @@ export default function RegisterPopup(props) {
     setPassword('');
     setName('');
     validator.resetForm();
+    props.setServerErrMessage('');
     props.onClose(false);
     props.redirect(true);
+  }
+
+  function handleSubmit() {
+    handleRegister(email, password, name);
   }
 
   return (
@@ -43,6 +69,8 @@ export default function RegisterPopup(props) {
                    redirectText="Войти"
                    redirect={handleRedirect}
                    isValid={validator.isValid}
+                   serverErrMessage={props.serverErrMessage}
+                   onSubmit={handleSubmit}
     >
       <label className="popup-form__label"
              htmlFor="register-input-email">Email</label>

@@ -13,12 +13,17 @@ export default function PopupWithForm(props) {
     }
   }
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    props.onSubmit();
+  }
+
   return (
     <section className={`popup${props.isOpen ? ' popup_opened' : ''}`} onClick={handleOverlayClose}>
-      <form className="popup-form" noValidate={true}>
+      <form className="popup-form" noValidate={true} onSubmit={handleSubmit}>
         <h3 className="popup-form__title">{props.title}</h3>
         {props.children}
-        <span className='popup-form__server-error'>{props.error}</span>
+        <span className='popup-form__server-error'>{props.serverErrMessage}</span>
         <button type="submit"
                 className={`popup-form__submit${props.isValid ? '' : ' popup-form__submit_disabled'}`}
                 disabled={!props.isValid}

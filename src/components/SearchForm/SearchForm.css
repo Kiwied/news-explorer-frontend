@@ -57,10 +57,6 @@
   color: #B6BCBF;
 }
 
-.search__input:focus {
-  outline: none;
-}
-
 .search__submit {
   position: absolute;
   right: 0;
