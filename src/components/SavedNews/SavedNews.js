@@ -9,7 +9,6 @@ export default function SavedNews({ savedArticles, setSavedArticles, ...props })
 
 
   React.useEffect(() => {
-    console.log(savedArticles);
     const jwt = localStorage.getItem('token');
     mainApi.getSavedArticles(jwt)
       .then(res => {
