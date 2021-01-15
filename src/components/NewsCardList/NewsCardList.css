@@ -11,12 +11,13 @@
 .card-list-container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 80px;
 }
 
 .card-list__more-btn {
   width: 288px;
   height: 64px;
-  margin: 64px auto 80px;
+  margin: 64px auto 0;
   background-color: white;
   border-radius: 80px;
   border: none;
@@ -38,8 +39,12 @@
     grid-gap: 8px;
   }
 
+  .card-list-container {
+    padding-bottom: 40px;
+  }
+
   .card-list__more-btn {
-    margin: 22px auto 40px;
+    margin: 22px auto 0;
   }
 }
 
@@ -49,7 +54,11 @@
     grid-gap: 10px;
   }
 
+  .card-list-container {
+    padding-bottom: 32px;
+  }
+
   .card-list__more-btn {
-    margin: 15px auto 32px;
+    margin: 15px auto 0;
   }
 }

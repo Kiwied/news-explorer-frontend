@@ -9,9 +9,8 @@
 .svd-news__card-list {
   max-width: 1232px;
   width: 85.5%;
-  margin: 0 auto;
+  margin: 62px auto;
   list-style: none;
-  padding: 62px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
   grid-gap: 16px;

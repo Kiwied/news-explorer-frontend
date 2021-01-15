@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './NewsCardList.css';
-import cards from '../../utils/cards';
 import NewsCard from '../NewsCard/NewsCard';
 
 export default function NewsCardList(props) {
@@ -14,18 +13,21 @@ export default function NewsCardList(props) {
   return (
     <section className="card-list-container">
       <ul className="card-list">
-        {cards.slice(0, cardsNumber).map((currentCard, i) => (
+        {props.articles.slice(0, cardsNumber).map(currentCard => (
           <NewsCard
-            key={i}
+            key={currentCard.id + 1}
             card={currentCard}
             loggedIn={props.loggedIn}
+            savedArticles={props.savedArticles}
+            setSavedArticles={props.setSavedArticles}
           />
         ))}
       </ul>
-      <button type="button"
-              className="card-list__more-btn"
-              onClick={handleGridExpansion}
-      >Показать еще</button>
+      {props.articles.length >= cardsNumber &&
+        <button type="button"
+                 className="card-list__more-btn"
+                 onClick={handleGridExpansion}
+        >Показать еще</button>}
     </section>
   )
 }
